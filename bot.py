@@ -48,6 +48,7 @@ def login_with_instagram(email_username,password):
     driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(password)
 
     driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button').click()
+    sleep(3)
 
 def comment(comment_post,comments,comments_interval,repeat):
     driver.get(comment_post)
@@ -63,6 +64,4 @@ def comment(comment_post,comments,comments_interval,repeat):
             driver.find_element_by_xpath(comment_area_path).click()
             driver.find_element_by_xpath(comment_area_path).send_keys(comment)
             comment_button.click()
-            sleep(int(comments_interval))
-
-start_driver()
+            sleep(int(comments_interval))    
