@@ -40,6 +40,15 @@ def login_with_facebook(email_username,password):
     driver.find_element_by_xpath('//*[@id="loginbutton"]').click()
     sleep(3)
 
+def login_with_instagram(email_username,password):
+    driver.get('https://www.instagram.com/')
+    sleep(3)
+
+    driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(email_username)
+    driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(password)
+
+    driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button').click()
+
 def comment(comment_post,comments,comments_interval,repeat):
     driver.get(comment_post)
     sleep(4)
@@ -57,5 +66,3 @@ def comment(comment_post,comments,comments_interval,repeat):
             sleep(int(comments_interval))
 
 start_driver()
-login_with_facebook('','')
-comment('',['teste','teste2'],'2','1')
